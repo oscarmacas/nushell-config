@@ -84,7 +84,10 @@ $env.config.color_config = {
 }
 
 $env.PROMPT_COMMAND = {||
-    let user = (whoami)
+    let user = (match (whoami) {
+        "u0_a398" => "oscar"
+        $u => $u
+    })
     let os = (match (sys host | get name | str downcase) {
         $n if ($n | str contains "windows") => "windows"
         $n if ($n | str contains "linux") => "linux"
