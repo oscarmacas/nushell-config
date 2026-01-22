@@ -117,6 +117,8 @@ alias yolo = claude --dangerously-skip-permissions
 alias nv = nvim
 alias . = start .
 alias ii = start
+alias oslink = curl https://gitlab.com/macas.oscar/alias/-/raw/main/oslink
+alias osinstall = curl https://gitlab.com/macas.oscar/alias/-/raw/main/osinstall
 
 def --env lf [] {
     let temp = (mktemp -t "lf-cwd.XXXXXX")
