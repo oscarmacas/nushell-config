@@ -88,6 +88,7 @@ $env.PROMPT_COMMAND = {||
     let os = (match (sys host | get name | str downcase) {
         $n if ($n | str contains "windows") => "windows"
         $n if ($n | str contains "linux") => "linux"
+        $n if ($n | str contains "sm-a546e") => "android"
         $n if ($n | str contains "darwin") or ($n | str contains "macos") => "macos"
         $n => $n
     })
