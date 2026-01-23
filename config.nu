@@ -144,5 +144,15 @@ def --env edal [] {
     nvim $nu.config-path
 }
 
+def tmux-oscar [] {
+    let session_exists = (tmux list-sessions | lines | find "oscar:")
+
+    if ($session_exists | length) > 0 {
+        ^tmux attach-session -t oscar
+    } else {
+        ^tmux new-session -s oscar
+    }
+}
+
 $env.config.show_banner = false
 source ~/.zoxide.nu
